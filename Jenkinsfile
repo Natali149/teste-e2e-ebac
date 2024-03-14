@@ -1,9 +1,12 @@
 pipeline{
     agent any
     stages {
-          stage('Hello') {
+          stage('Clone do repositório') {
             steps {
                 git branch: 'main', url: 'https://github.com/Natali149/teste-e2e-ebac.git'
+            }
+        } stage('Instala as dependencias') {
+            steps {
                 bat 'npm install'
             }
         }
